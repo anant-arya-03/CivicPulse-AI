@@ -1,0 +1,19 @@
+[
+  {
+    "name": "<Official department name, exactly as on the official website>",
+    "jurisdiction": "<Area it serves, e.g. 'Ward 12, Example City'>",
+    "jurisdiction_level": "CITY",
+    "city": "<City>",
+    "state": "<State or region>",
+    "country": "IN",
+    "supported_categories": ["ROAD_POTHOLE", "DAMAGED_INFRASTRUCTURE"],
+    "official_email": "<grievance email copied from the official page>",
+    "official_phone": "<optional, copied from the official page>",
+    "website_url": "https://<official website>",
+    "source_url": "https://<the exact official page where you found the email>",
+    "verified_at": "<YYYY-MM-DD, the day you checked the source>",
+    "verification_notes": "<optional: e.g. 'Listed under Public Grievances'>",
+    "service_timeline_days": null,
+    "parent_name": null
+  }
+]
