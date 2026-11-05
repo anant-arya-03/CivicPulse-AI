@@ -1,0 +1,188 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * CivicPulse AI design tokens. See docs/design-system.md for usage rules.
+ * shadcn/ui components read the semantic names (--primary, --muted, ...);
+ * our own components may also use the brand names (--navy, --teal, ...).
+ */
+:root {
+  /* Brand */
+  --navy: #12324a;
+  --navy-hover: #0d2638;
+  --teal: #0f8b8d; /* icons, accents, large text only */
+  --teal-strong: #0b6f71; /* teal text at body size (5.9:1 on white) */
+  --teal-soft: #e6f4f4;
+
+  /* Status */
+  --success: #157a56; /* 4.5:1+ on --success-soft and white */
+  --success-soft: #e7f4ee;
+  --warning: #d99620; /* fills and icons only */
+  --warning-strong: #8a5a0b; /* warning text */
+  --warning-soft: #fbf3e4;
+  --error: #d94f4f; /* borders, icons, fills */
+  --error-strong: #b83a3a; /* error text */
+  --error-soft: #fbeaea;
+
+  /* Semantic (used by shadcn/ui) */
+  --background: #f7f9fc;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+  --primary: var(--navy); /* white-on-navy passes contrast; white-on-teal does not */
+  --primary-foreground: #ffffff;
+  --secondary: #eef2f7;
+  --secondary-foreground: var(--navy);
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: var(--teal-soft);
+  --accent-foreground: var(--teal-strong);
+  --destructive: var(--error);
+  --border: #e2e8f0;
+  --input: #cbd5e1;
+  --ring: var(--teal);
+  --radius: 0.5rem;
+
+  --chart-1: var(--teal);
+  --chart-2: var(--navy);
+  --chart-3: var(--success);
+  --chart-4: var(--warning);
+  --chart-5: var(--error);
+
+  /* Navy sidebar for the authenticated app */
+  --sidebar: var(--navy);
+  --sidebar-foreground: #cbd5e1;
+  --sidebar-primary: var(--teal);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: rgb(255 255 255 / 0.08);
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgb(255 255 255 / 0.1);
+  --sidebar-ring: var(--teal);
+}
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-navy: var(--navy);
+  --color-navy-hover: var(--navy-hover);
+  --color-teal: var(--teal);
+  --color-teal-strong: var(--teal-strong);
+  --color-teal-soft: var(--teal-soft);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-strong: var(--warning-strong);
+  --color-warning-soft: var(--warning-soft);
+  --color-error: var(--error);
+  --color-error-strong: var(--error-strong);
+  --color-error-soft: var(--error-soft);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.5);
+  --radius-2xl: calc(var(--radius) * 2);
+  --radius-3xl: calc(var(--radius) * 2.5);
+  --radius-4xl: calc(var(--radius) * 3);
+
+  --shadow-card: 0 1px 2px rgb(15 23 42 / 0.06);
+  --shadow-raised: 0 4px 12px rgb(15 23 42 / 0.08);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    line-height: 1.625;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading tracking-tight text-navy;
+    line-height: 1.25;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+/* Map pin used by components/complaints/location-map.tsx (a teardrop with a white dot). */
+.cp-map-pin {
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50% 50% 50% 0;
+  background: var(--teal);
+  border: 3px solid #ffffff;
+  box-shadow: 0 2px 6px rgb(15 23 42 / 0.35);
+  transform: rotate(-45deg);
+}
+.cp-map-pin::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+.leaflet-container {
+  font-family: inherit;
+  z-index: 0; /* keep the map below the sticky header and mobile nav */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
