@@ -10,6 +10,8 @@ export interface ApiErrorBody {
 }
 
 export interface User {
+  notification_preferences?: { followup_ready: boolean; status_changes: boolean };
+  privacy_settings?: { include_name_in_complaints: boolean; share_exact_coordinates: boolean };
   id: string;
   name: string;
   email: string;

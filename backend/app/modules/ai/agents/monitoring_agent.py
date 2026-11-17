@@ -16,7 +16,7 @@ MAX_REPLY_CHARS = 8000  # longer replies are cut; the citizen can always read th
 
 def _escape(text: str) -> str:
     # The reply can't close our tags: "<" becomes a harmless look-alike escape.
-    return text.replace("<", "\u003c")
+    return text.replace("<", "\\u003c")
 
 
 def classify_reply(

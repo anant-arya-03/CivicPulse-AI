@@ -44,7 +44,7 @@ export function ProfileForm({ user }: { user: User }) {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} noValidate className="grid max-w-md gap-5">
+    <form method="post" onSubmit={handleSubmit(onSubmit)} noValidate className="grid max-w-md gap-5">
       <FormAlert message={errors.root?.message} />
       <FormField id="name" label="Full name" error={errors.name?.message}>
         <Input autoComplete="name" {...fieldAria("name", errors.name?.message)} {...register("name")} />

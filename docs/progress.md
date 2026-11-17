@@ -195,9 +195,9 @@ Each milestone ends with: tests passing, docs updated, this file updated, and a 
 
 ### Milestone 7 — Final polish
 - [ ] Full settings page (notification and privacy settings), error handling review, manual keyboard and screen-reader pass (M6 did the automated a11y, responsive and security-header pass)
-- [ ] Notification bell (`GET /notifications`, mark seen), moved from M5
+- [x] Notification bell (`GET /notifications`, mark seen), moved from M5
 - [ ] Playwright demo journey (`docs/workflows.md` §6)
-- [ ] Docs refresh, deployment notes
+- [x] Docs refresh, deployment notes
 
 ## Known limitations / open questions
 
@@ -228,10 +228,32 @@ Each milestone ends with: tests passing, docs updated, this file updated, and a 
 - HEIC photos (iPhone default) are rejected with a helpful message; converting them is future work.
 - Uploads larger than 12 MB that bypass the browser check (e.g. sent with curl) through the Next.js dev proxy fail with a generic 500 after a 30-second timeout, instead of a 413 (verified with a 13 MB file). The UI never sends them, and the backend itself answers 413 immediately. In production, put the API behind a real reverse proxy (nginx etc.) with its own body limit.
 - Deleting a complaint draft isn't offered (cancel instead). Abandoned drafts stay in the database.
-- Notification and privacy settings are shown as "later milestone" cards; the DB columns already exist.
+- Notification and privacy settings are implemented in M7; privacy changes affect newly generated letters only.
 - Registration reveals whether an email is already registered (409). Acceptable for the MVP; rate limiting reduces abuse.
 - In-memory rate limiting only works for a single backend process, and resets on restart.
 - The e2e tests write `e2e-*@civicpulse.example` users into the development database (cleanup command in `docs/development.md` §6).
 - `npm audit --omit=dev` is clean. The full `npm audit` still lists 6 low/moderate advisories in the `shadcn` CLI (`deepmerge`, `minimatch` via `ts-morph`), a development-only code generator that the app and build don't execute; the fix is a breaking downgrade, so it's left as is.
 - The authority directory has **fictional demo records** only. Real records need manual verification and the importer (`docs/database.md` §4); nobody has verified any yet.
 - The Gmail API integration and S3 storage are planned but not part of the MVP milestones.
+
+## Milestone 7 implementation ? 2026-11-17
+
+Implemented notification feed and read cursor, app-shell bell, persistent notification/privacy preferences, password change with session revocation, guided demo story, and deployment notes. Fixed ineffective reply delimiter escaping and applied coordinate privacy to generated letters. Added backend security/ownership/privacy tests and frontend settings/notification coverage, plus a desktop/mobile settings journey. Verification results are recorded below after execution. Manual screen-reader validation and actual hosted deployment remain unverified.
+
+### M7 verification (2026-11-17)
+
+- Backend: 475 tests passed; the five new polish tests also passed after schema typing changes. Ruff lint and formatting clean.
+- Frontend: 115 tests passed; ESLint, TypeScript and production build passed. Build-time Google Fonts was replaced with a system font stack after a network failure.
+- Browser: the 18 existing journeys passed on desktop and mobile. The two new settings journeys initially had an ambiguous test locator (also matched the toast region); after making it exact, both passed. The final settings journeys additionally pass axe with zero violations and keyboard/persistence/overflow assertions.
+- Migration: upgraded, downgraded, upgraded again; alembic check reports no drift.
+- Test-owned servers and e2e accounts/photos cleaned up. No real provider was called. Manual screen-reader and hosted deployment validation remain open; automated accessibility checks are not a substitute.
+
+- Security follow-up: upgraded Next.js and eslint-config-next from 16.4.4 to 16.4.6 to address GHSA-mfr8-8qww-v76h. The source does not currently use unstable_cache. Full development tooling still reports moderate advisories; no force/downgrade fix was applied.
+
+- Final verification on Next.js 16.4.6: all 20 Playwright tests passed (desktop and Pixel 7), including axe on settings/notifications; all 115 Vitest tests, lint, typecheck and build passed. npm audit --omit=dev reports zero vulnerabilities; full audit reports 10 moderate development-tooling advisories.
+
+
+### Department simulation usability fix (2026-11-17)
+A Noida/IN report correctly had no geographic match in the fictional Demo City directory, but the UI offered no simulation route. Added an explicit Show demo departments choice for simulation-enabled sessions. It keeps the citizen's location, filters to demo directory entries for the issue type, requires manual selection, preserves saved choices, and provides retry/empty states. Fixed the no-match notice's text contrast (4.34:1 before the fix). Added four component tests and a Noida-to-simulated-submission browser journey with axe and overflow assertions on both devices.
+
+Verification: all 119 frontend unit tests passed; lint, typecheck and production build passed. Both new desktop/mobile browser journeys passed with zero axe violations, no horizontal overflow, preserved Noida/IN location and SIMULATED_SENT delivery. Test accounts/photos were cleaned up; the existing citizen draft was left unchanged. No backend rules or directory records were changed.

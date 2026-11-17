@@ -263,3 +263,7 @@ alembic revision --autogenerate -m "add complaints table"   # creates a file in 
 alembic upgrade head
 alembic downgrade -1   # undo the last migration if needed
 ```
+
+## Milestone 7 migration
+
+Revision m7_notification_cursor adds users.notifications_last_seen_seq BIGINT NOT NULL DEFAULT 0. Notifications use complaint_events.seq for ordering and the read cursor, avoiding equal-timestamp losses. The existing notifications_last_seen_at column is retained for compatibility but is not used by the bell. No notifications table is needed.

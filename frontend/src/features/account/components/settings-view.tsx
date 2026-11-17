@@ -1,6 +1,7 @@
 "use client";
 
-import { Bell, Lock } from "lucide-react";
+import { PreferencesForm } from "./preferences-form";
+import { PasswordForm } from "./password-form";
 
 import { PageHeader } from "@/components/layout/page-header";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -66,47 +67,8 @@ function SettingsContent({ user }: { user: User }) {
         </CardContent>
       </Card>
 
-      <div className="grid gap-4 md:grid-cols-2">
-        <ComingSoonCard
-          icon={Bell}
-          title="Notification preferences"
-          description="Choose which complaint updates you hear about."
-        />
-        <ComingSoonCard
-          icon={Lock}
-          title="Privacy settings"
-          description="Control what personal details are included in complaints."
-        />
-      </div>
+      <Card><CardHeader><CardTitle><h2>Preferences</h2></CardTitle></CardHeader><CardContent><PreferencesForm user={user} /></CardContent></Card>
+      <Card><CardHeader><CardTitle><h2>Change password</h2></CardTitle></CardHeader><CardContent><PasswordForm /></CardContent></Card>
     </>
-  );
-}
-
-function ComingSoonCard({
-  icon: Icon,
-  title,
-  description,
-}: {
-  icon: typeof Bell;
-  title: string;
-  description: string;
-}) {
-  return (
-    <Card>
-      <CardHeader>
-        <span className="mb-2 flex size-10 items-center justify-center rounded-lg bg-secondary text-navy">
-          <Icon className="size-5" aria-hidden />
-        </span>
-        <CardTitle>
-          <h2>{title}</h2>
-        </CardTitle>
-        <CardDescription>{description}</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <span className="rounded-full border border-dashed border-input px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
-          Available in a later milestone
-        </span>
-      </CardContent>
-    </Card>
   );
 }

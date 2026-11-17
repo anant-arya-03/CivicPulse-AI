@@ -40,6 +40,15 @@ export function DemoTools({ complaint }: { complaint: Complaint }) {
         </CardDescription>
       </CardHeader>
       <CardContent className="grid grid-cols-1 gap-4">
+        <div className="rounded-lg bg-warning-soft p-3 text-sm text-warning-strong">
+          <p className="font-semibold">Try the complete story</p>
+          <ol className="mt-2 list-decimal space-y-2 pl-5">
+            <li>Skip ahead to draft a reminder. Review and approve it yourself.</li>
+            <li>Simulate an acknowledgement to see the department reference and notification.</li>
+            <li>Choose ?Says it is fixed?, then upload an after photo in Check the repair.</li>
+            <li>Dispute the repair to reopen, or confirm it after checking the place yourself.</li>
+          </ol>
+        </div>
         <div className="grid gap-2">
           <Label htmlFor="demo-reply">Simulated reply from the department</Label>
           <select

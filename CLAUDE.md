@@ -1,6 +1,6 @@
 # CLAUDE.md — CivicPulse AI
 
-Civic complaint reporting platform (student GenAI semester project, built to be extendable). Next.js frontend + FastAPI backend + PostgreSQL, modular monolith. Read `docs/progress.md` first to see the current milestone.
+Civic complaint reporting platform (student GenAI semester project, built to be extendable). Next.js frontend + FastAPI backend + PostgreSQL, modular monolith. Read `docs/progress.md` first to see the current milestone. As of 2026-11-17, M7 features are implemented; manual screen-reader and hosted validation remain open. `docs/presentation-guide.md` is the short evidence-linked overview.
 
 ## Working agreement
 - Build **one milestone at a time** (`docs/progress.md`). Don't start the next milestone unless asked.
@@ -44,7 +44,7 @@ Civic complaint reporting platform (student GenAI semester project, built to be 
 - Tests: pytest against `TEST_DATABASE_URL`, mock providers only.
 
 ## Frontend conventions (`frontend/`)
-- **Next.js 16.4** with Cache Components + partial prefetching. APIs differ from older Next.js; read `frontend/node_modules/next/dist/docs/` before using an unfamiliar API. Middleware is `src/proxy.ts`.
+- **Next.js 16.4.6** with Cache Components + partial prefetching. APIs differ from older Next.js; read `frontend/node_modules/next/dist/docs/` before using an unfamiliar API. Middleware is `src/proxy.ts`.
 - Server Components must not read cookies/session. Authenticated pages are client components using TanStack Query; `AppShell` handles the 401 → `/login` redirect. `useSearchParams` needs a `<Suspense>` parent.
 - TypeScript strict, Tailwind v4 tokens in `src/app/globals.css` (see `docs/design-system.md`), shadcn/ui (Radix base; `cn` comes from the `cn` package), lucide-react, React Hook Form + Zod 4 (`zodResolver`), TanStack Query 5.
 - Validation rules must match the backend (e.g. password: 8–128 chars, a letter and a number).

@@ -44,7 +44,7 @@ Each badge pairs **color with an icon and a text label**. Color is never the onl
 
 ## 3. Typography
 
-Font: **Inter** via `next/font/google` (self-hosted at build, no layout shift).
+Font: native system sans-serif stack (including Segoe UI on Windows). M7 removes build-time Google Fonts requests so offline demos and restricted networks can build reliably.
 
 | Role | Size / line height | Weight |
 |---|---|---|

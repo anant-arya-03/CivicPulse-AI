@@ -228,3 +228,11 @@ Only the mock provider exists, and it never contacts anyone (`is_simulated = tru
 6. Simulate reply "work completed" → `RESOLVED_PENDING_VERIFICATION`.
 7. Upload an "after" photo → AI assessment → the citizen **disputes** → `REOPENED` → approve and send the "not fixed" message. Simulate another completion → upload → confirm → `VERIFIED_RESOLVED`; the history shows both checks. ✅ automated in `e2e/resolution.spec.ts`.
 8. Bonus: simulate the prompt-injection reply. With the demo AI it is read as "says it's resolved" (it contains that word): the worst possible effect, which still needs the citizen's photo check; nothing is closed or sent.
+
+## Milestone 7 preferences and notifications
+
+The app shell includes an expandable notification bell, refreshed every 30 seconds. Mark all as read advances only through the newest displayed event. Preferences control reminders/escalations and reply/status notifications independently. Settings also controls the name and map coordinates in newly generated letters. Existing drafts and approval snapshots remain unchanged; citizens must explicitly review or regenerate them. Password changes revoke all sessions. Demo tools now includes a guided story; all existing approval gates still apply. Deployment instructions: deployment.md.
+
+
+### Unmatched locations in simulation (2026-11-17)
+When the matcher returns NONE and simulation tools are enabled, the department step offers Show demo departments. This opt-in list contains only fictional, active directory records that handle the chosen category. It never labels them as geographically responsible. The citizen chooses a radio option and confirms Use demo department; the entered address stays unchanged. Exact local matches retain the existing flow, and continuing without a department remains available. A saved demo selection stays visible when returning to the step. No contacts are generated and the real-send guard is unchanged.

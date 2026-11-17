@@ -315,11 +315,19 @@ The full list is in [docs/progress.md](docs/progress.md#known-limitations--open-
 | [Architecture](docs/architecture.md) | structure, key decisions and why, extension points |
 | [Database](docs/database.md) | every table, column and constraint |
 | [API](docs/api.md) | all REST endpoints, errors, rate limits |
-| [Workflows](docs/workflows.md) | status machine, the five agents, follow-up and resolution rules, demo journey |
+| [Workflows](docs/workflows.md) | status machine, AI tasks and deterministic routing, follow-up and resolution rules, demo journey |
 | [Design system](docs/design-system.md) | colours (contrast-checked), typography, components |
 | [Development](docs/development.md) | setup, configuration, the worker, tests, troubleshooting |
 | [Progress](docs/progress.md) | each milestone: what was built, test results, problems found and fixed |
+| [AGENTS.md](AGENTS.md) | the handbook for AI coding agents (Codex, Claude Code) and new contributors: rules, architecture, commands, recipes |
+| [Presentation](docs/CivicPulse-AI-presentation.pptx) | a 17-slide PowerPoint that tells the project through one citizen's story, with speaker notes |
+| [Complete presentation guide](docs/presentation-guide.md) | current stack, four AI agents, detailed implementation explanations, demo script, suggested talk structure and 40 viva answers |
+| [Presentation technical inventory](docs/presentation-technical-inventory.md) | code-derived database columns/constraints, all API operations, state transitions and AI output schemas |
 
 ---
 
 *CivicPulse AI is a student project built for learning. It is not affiliated with any government. All departments, emails and replies in the demo are fictional.*
+
+
+### Milestone 7 update (17 November 2026)
+Notification bell, saved notification/privacy preferences, password changes, and a guided simulation story are implemented. See [deployment instructions](docs/deployment.md) for presenting and hosting the simulated product. Next.js is patched to 16.4.6. Fonts use a system stack so builds do not require Google Fonts. Current verification is recorded in docs/progress.md; the earlier results above describe the M6 baseline. Real sending and inbound email remain out of scope, and a manual screen-reader pass and hosted validation are still required before release.

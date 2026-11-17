@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import Any
 
-from sqlalchemy import Boolean, CheckConstraint, DateTime, String, true
+from sqlalchemy import BigInteger, Boolean, CheckConstraint, DateTime, String, true
 from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import Mapped, mapped_column
 
@@ -31,4 +31,7 @@ class User(UUIDPrimaryKeyMixin, TimestampMixin, Base):
         JSONB, nullable=False, default=dict, server_default="{}"
     )
     notifications_last_seen_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    notifications_last_seen_seq: Mapped[int] = mapped_column(
+        BigInteger, nullable=False, default=0, server_default="0"
+    )
     last_login_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))

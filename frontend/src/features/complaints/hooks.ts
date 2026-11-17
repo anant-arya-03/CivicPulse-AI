@@ -202,11 +202,11 @@ export function useAuthorityMatches(complaintId: string) {
 }
 
 export function useAuthoritySearch(params: { q?: string; category?: Category }, enabled: boolean) {
-  return useQuery({
+  return useHydrationSafeQuery(useQuery({
     queryKey: ["authorities", params],
     queryFn: ({ signal }) => authoritiesApi.search(params, signal),
     enabled,
-  });
+  }));
 }
 
 export function useSelectAuthority(complaintId: string) {

@@ -57,7 +57,9 @@ def build_facts(complaint: Complaint, user: User) -> dict[str, Any]:
         "location_summary": ", ".join(p for p in location_parts if p),
         "coordinates": (
             f"{float(complaint.latitude):.6f}, {float(complaint.longitude):.6f}"
-            if complaint.latitude is not None and complaint.longitude is not None
+            if (user.privacy_settings or {}).get("share_exact_coordinates", True)
+            and complaint.latitude is not None
+            and complaint.longitude is not None
             else None
         ),
         "observed_on": (

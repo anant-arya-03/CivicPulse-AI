@@ -13,6 +13,7 @@ from app.modules.complaints.router import router as complaints_router
 from app.modules.evidence.router import router as evidence_router
 from app.modules.locations.router import router as locations_router
 from app.modules.monitoring.router import router as monitoring_router
+from app.modules.notifications.router import router as notifications_router
 from app.modules.resolutions.router import router as resolutions_router
 from app.modules.users.router import router as users_router
 
@@ -40,3 +41,6 @@ api_router.include_router(authorities_router)
 api_router.include_router(communications_router)
 api_router.include_router(monitoring_router)
 api_router.include_router(resolutions_router)
+
+
+api_router.include_router(notifications_router)

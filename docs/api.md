@@ -160,3 +160,9 @@ In M5 the dashboard's `needs_attention` list covers "what needs me now". A notif
 | Get matching department | `GET /complaints/{id}/authority-matches` |
 | Process simulated replies | `POST /complaints/{id}/simulation/reply` |
 | Generate / approve reminder | drafted by the worker; `POST /communications/{id}/approve` + `/send` |
+
+## Milestone 7 additions
+
+PUT /api/v1/users/me/settings accepts notification_preferences (followup_ready, status_changes) and privacy_settings (include_name_in_complaints, share_exact_coordinates). Both groups use booleans and reject unknown settings. User responses expose the saved preferences with true defaults. Existing letters are unchanged. POST /api/v1/users/me/password accepts current_password and new_password (8?128 characters, letter and digit), rate limited to 5/min; success revokes every session and requires a new login.
+
+GET /api/v1/notifications returns unread_count and the newest 30 enabled audit events with id, complaint_id, description, created_at and unread. POST /api/v1/notifications/mark-seen accepts through_id from the displayed feed. The monotonic sequence cursor leaves newer events unread and another user's event returns 404. Preference filters affect the bell, not dashboard actions or the audit trail. Both writes require CSRF.

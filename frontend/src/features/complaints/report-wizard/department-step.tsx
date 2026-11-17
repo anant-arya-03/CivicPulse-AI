@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, ArrowRight, Info, ListPlus, Loader2 } from "lucide-react";
+import { ArrowLeft, ArrowRight, FlaskConical, Info, ListPlus, Loader2 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import { AuthorityCard } from "@/components/complaints/authority-card";
@@ -8,7 +8,7 @@ import { ErrorState } from "@/components/shared/error-state";
 import { FormAlert } from "@/components/shared/form-alert";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { useAuthorityMatches, useAuthoritySearch, useSelectAuthority } from "@/features/complaints/hooks";
+import { useAuthorityMatches, useAuthoritySearch, useSelectAuthority, useSimulationInfo } from "@/features/complaints/hooks";
 import { initialAuthoritySelection } from "@/features/complaints/submission";
 import { isApiError } from "@/lib/api-client";
 import type { Authority, Complaint } from "@/types/api";
@@ -29,6 +29,7 @@ const INTRO = {
 export function DepartmentStep({ complaint, onBack, onContinue }: DepartmentStepProps) {
   const matches = useAuthorityMatches(complaint.id);
   const selectAuthority = useSelectAuthority(complaint.id);
+  const simulation = useSimulationInfo();
   const [choice, setChoice] = useState<string | null>(null);
   const [showAll, setShowAll] = useState(false);
   const others = useAuthoritySearch({ category: complaint.category ?? undefined }, showAll);
@@ -73,7 +74,14 @@ export function DepartmentStep({ complaint, onBack, onContinue }: DepartmentStep
   const { confidence } = matches.data;
   const matched = matches.data.matches;
   const shownIds = new Set(matched.map((m) => m.authority.id));
-  const extra = (others.data ?? []).filter((a) => !shownIds.has(a.id) && a.official_email);
+  const demoFallback = confidence === "NONE" && simulation.data?.enabled === true;
+  // A saved choice remains visible when returning to this step, even without a local match.
+  const saved = complaint.authority && !shownIds.has(complaint.authority.id) ? [complaint.authority] : [];
+  const candidates = showAll ? [...(others.data ?? []), ...saved] : saved;
+  const extra = candidates.filter((a, index, all) =>
+    !shownIds.has(a.id) && a.official_email && (!demoFallback || a.is_demo) &&
+    all.findIndex((candidate) => candidate.id === a.id) === index,
+  );
 
   return (
     <div className="grid grid-cols-1 gap-6">
@@ -83,11 +91,27 @@ export function DepartmentStep({ complaint, onBack, onContinue }: DepartmentStep
       </div>
 
       {confidence === "NONE" && (
-        <p className="flex items-start gap-2 rounded-lg bg-muted px-3 py-2 text-sm text-muted-foreground">
+        <p className="flex items-start gap-2 rounded-lg bg-muted px-3 py-2 text-sm text-foreground">
           <Info className="mt-0.5 size-4 shrink-0" aria-hidden />
           You can still finish your complaint letter and send it to the department yourself. We
           never guess contact details: departments are only added from verified official sources.
         </p>
+      )}
+
+      {demoFallback && (
+        <section aria-label="Continue the simulation" className="grid gap-3 rounded-xl border border-dashed border-warning bg-warning-soft p-4 text-sm text-warning-strong">
+          <h3 className="flex items-center gap-2 font-semibold"><FlaskConical className="size-4 shrink-0" aria-hidden /> Continue with a demo department</h3>
+          <p>
+            No department matches your issue in {complaint.city || "this area"}. To try the full
+            simulation, you can choose a fictional Demo City department that handles this issue type.
+          </p>
+          <p>Your entered location stays unchanged. This is not a real department for your area, and no real email will be sent.</p>
+          {!showAll && (
+            <Button type="button" className="w-fit" onClick={() => setShowAll(true)}>
+              Show demo departments <ArrowRight aria-hidden />
+            </Button>
+          )}
+        </section>
       )}
 
       {matched.length > 0 && (
@@ -105,12 +129,17 @@ export function DepartmentStep({ complaint, onBack, onContinue }: DepartmentStep
         </Button>
       )}
       {showAll && others.isFetching && <Skeleton className="h-24 rounded-xl" />}
-      {showAll && !others.isFetching && extra.length === 0 && (
-        <p className="text-sm text-muted-foreground">No other departments handle this issue.</p>
+      {showAll && others.isError && (
+        <ErrorState message="Couldn't load the directory. Please try again." onRetry={() => others.refetch()} />
+      )}
+      {showAll && others.isSuccess && !others.isFetching && extra.length === 0 && (
+        <p className="text-sm text-muted-foreground">
+          {demoFallback ? "No demo department handles this issue type yet. You can go back to check the issue type or continue without a department." : "No other departments handle this issue."}
+        </p>
       )}
       {extra.length > 0 && (
         <AuthorityChoices
-          label="Other departments"
+          label={demoFallback ? "Demo departments (simulation only)" : "Other departments"}
           options={extra.map((authority) => ({ authority }))}
           choice={choice}
           onChoose={setChoice}
@@ -138,7 +167,7 @@ export function DepartmentStep({ complaint, onBack, onContinue }: DepartmentStep
         ) : (
           <Button type="button" size="lg" disabled={!choice || selectAuthority.isPending} onClick={() => void confirm()}>
             {selectAuthority.isPending && <Loader2 className="animate-spin" aria-hidden />}
-            Use this department <ArrowRight aria-hidden />
+            {demoFallback ? "Use demo department" : "Use this department"} <ArrowRight aria-hidden />
           </Button>
         )}
       </div>

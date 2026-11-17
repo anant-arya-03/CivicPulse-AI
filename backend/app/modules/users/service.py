@@ -4,7 +4,7 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from app.modules.users.models import User
-from app.modules.users.schemas import UserUpdate
+from app.modules.users.schemas import PasswordChange, SettingsUpdate, UserUpdate
 
 
 def normalize_email(email: str) -> str:
@@ -31,3 +31,25 @@ def update_profile(db: Session, user: User, data: UserUpdate) -> User:
     user.name = data.name
     db.commit()
     return user
+
+
+def update_settings(db: Session, user: User, data: SettingsUpdate) -> User:
+    user.notification_preferences = data.notification_preferences.model_dump()
+    user.privacy_settings = data.privacy_settings.model_dump()
+    db.commit()
+    return user
+
+
+def change_password(db: Session, user: User, data: PasswordChange) -> None:
+    # Local imports avoid the auth service's dependency on this module.
+    from app.common.time import utc_now
+    from app.core.errors import BusinessRuleError
+    from app.core.security import hash_password, verify_password
+    from app.modules.auth.models import UserSession
+
+    if not verify_password(data.current_password, user.password_hash):
+        raise BusinessRuleError("The current password is incorrect.")
+    user.password_hash = hash_password(data.new_password)
+    for session in db.scalars(select(UserSession).where(UserSession.user_id == user.id)):
+        session.revoked_at = utc_now()
+    db.commit()
