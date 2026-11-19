@@ -69,7 +69,7 @@ export function AiInsightPanel({ state, className }: { state: PanelState; classN
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h3 className="flex items-center gap-2 text-sm font-semibold text-navy">
           <Sparkles className="size-4 text-teal" aria-hidden />
-          What the AI sees
+          {analysis.is_mock ? "Sample analysis" : "What the AI sees"}
           <AiSourceBadge isMock={analysis.is_mock} />
         </h3>
         {state.onRetry && (
@@ -80,7 +80,13 @@ export function AiInsightPanel({ state, className }: { state: PanelState; classN
         )}
       </div>
 
-      {!result.is_civic_issue && (
+      {analysis.is_mock && (
+        <p className="mt-3 text-sm text-muted-foreground">
+          Demo mode uses a preset example for every photo. Choose the issue type that matches your photo.
+        </p>
+      )}
+
+      {!analysis.is_mock && !result.is_civic_issue && (
         <p className="mt-3 flex items-start gap-2 rounded-lg bg-warning-soft px-3 py-2 text-sm text-warning-strong">
           <AlertTriangle className="mt-0.5 size-4 shrink-0" aria-hidden />
           The AI couldn&apos;t see a clear civic problem in this photo. You can still continue.
@@ -105,7 +111,7 @@ export function AiInsightPanel({ state, className }: { state: PanelState; classN
         </div>
       </dl>
 
-      <InsightList icon={<Eye className="size-3.5" aria-hidden />} title="Visible in the photo" items={result.observations} />
+      <InsightList icon={<Eye className="size-3.5" aria-hidden />} title={analysis.is_mock ? "Sample observations" : "Visible in the photo"} items={result.observations} />
       <InsightList icon={<HelpCircle className="size-3.5" aria-hidden />} title="Not certain" items={result.uncertainties} />
       <InsightList
         icon={<AlertTriangle className="size-3.5" aria-hidden />}

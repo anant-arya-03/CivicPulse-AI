@@ -107,6 +107,6 @@ class Communication(UUIDPrimaryKeyMixin, TimestampMixin, Base):
     # Replies: what the reply means (see monitoring/constants.ReplyKind), and who decided it.
     # NULL kind on a reply = the citizen still needs to tell us (AI unavailable or unsure).
     reply_kind: Mapped[str | None] = mapped_column(String(30))
-    reply_kind_source: Mapped[str | None] = mapped_column(String(20))  # AI | CITIZEN
+    reply_kind_source: Mapped[str | None] = mapped_column(String(20))  # AI | CITIZEN | DEPARTMENT
     reply_summary: Mapped[str | None] = mapped_column(String(500))  # sanitised AI summary
     reference_number: Mapped[str | None] = mapped_column(String(40))  # found in this reply

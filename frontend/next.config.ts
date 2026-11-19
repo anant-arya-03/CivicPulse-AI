@@ -7,6 +7,8 @@ const nextConfig: NextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
   experimental: {
+    // Local model inference can take longer than Next.js's default proxy timeout.
+    proxyTimeout: Number(process.env.BACKEND_PROXY_TIMEOUT_MS) || undefined,
     // Next.js keeps a copy of every request body while routing rewrites, and by default cuts it
     // off at 10 MB. Photos may be up to 10 MB (MAX_UPLOAD_MB) plus form-data overhead, so allow
     // a little more. Larger requests are refused by the backend (or the browser, before upload).
@@ -48,6 +50,14 @@ const nextConfig: NextConfig = {
       {
         source: "/api/v1/:path*",
         destination: `${BACKEND_URL}/api/v1/:path*`,
+      },
+      {
+        source: "/department",
+        destination: `${BACKEND_URL}/department/index.html`,
+      },
+      {
+        source: "/department/:asset*",
+        destination: `${BACKEND_URL}/department/:asset*`,
       },
     ];
   },

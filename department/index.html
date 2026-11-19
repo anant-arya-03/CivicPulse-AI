@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' blob:; object-src 'none'; base-uri 'none'; form-action 'self'">
+    <title>Department inbox · CivicPulse AI</title>
+    <link rel="stylesheet" href="/department/portal.css">
+    <script src="/department/portal.js" defer></script>
+  </head>
+  <body>
+    <header class="masthead">
+      <div class="brand"><span class="mark" aria-hidden="true">CP</span> CivicPulse <span class="brand-divider"></span> Department portal</div>
+      <button id="sign-out" type="button" class="secondary" hidden>Sign out</button>
+    </header>
+    <main>
+      <section id="gate" class="gate" aria-labelledby="sign-in-title">
+        <div class="tag">Simulation</div>
+        <h1 id="sign-in-title">Department sign-in</h1>
+        <p>Enter your department access code to review incoming reports and post repair updates.</p>
+        <form id="sign-in" method="post">
+          <label for="access-code">Access code</label>
+          <input id="access-code" type="password" autocomplete="off" required disabled>
+          <button id="open-inbox" type="submit" disabled>Open inbox</button>
+        </form>
+        <p id="sign-in-error" class="error" role="alert" hidden></p>
+      </section>
+      <section id="workspace" aria-labelledby="inbox-title" hidden>
+        <div class="inbox-heading">
+          <div>
+            <div class="tag">Simulation</div>
+            <h1 id="inbox-title" tabindex="-1">Department inbox</h1>
+            <p id="department-name"></p>
+          </div>
+          <div class="connection"><span aria-hidden="true"></span><p id="connection-status">Connecting</p></div>
+        </div>
+        <p id="notice" class="notice" role="status"></p>
+        <p id="inbox-error" class="error" role="alert" hidden></p>
+        <div class="inbox">
+          <section class="report-list" aria-labelledby="list-title">
+            <div class="section-heading"><h2 id="list-title">Reports</h2><span id="report-count"></span></div>
+            <p id="empty" class="empty" hidden>New reports appear here after a citizen approves and sends them to your department.</p>
+            <ul id="reports"></ul>
+          </section>
+          <section class="report-detail" aria-labelledby="report-title">
+            <p id="choose-report" class="empty">Select a report to read the approved message and post an update.</p>
+            <div id="report" hidden>
+              <div class="details-top"><span id="report-reference"></span><span id="report-status" class="status"></span></div>
+              <h2 id="report-title"></h2>
+              <p id="received"></p>
+              <div id="report-body" class="message"></div>
+              <button id="load-photos" type="button" class="secondary">Show submitted photos</button>
+              <div id="photos" class="photos"></div>
+              <div class="actions">
+                <button id="start-work" type="button" class="secondary">Start work</button>
+                <button id="repair-complete" type="button">Report repair complete</button>
+              </div>
+              <p id="repair-note">A repair update asks the citizen to verify the result.</p>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

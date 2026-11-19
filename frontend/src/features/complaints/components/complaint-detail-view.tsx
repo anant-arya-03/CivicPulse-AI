@@ -55,7 +55,7 @@ import type { Communication, Complaint } from "@/types/api";
 
 export function ComplaintDetailView() {
   const { id } = useParams<{ id: string }>();
-  const { data: complaint, isPending, error, refetch } = useComplaint(id);
+  const { data: complaint, isPending, error, refetch } = useComplaint(id, true);
 
   if (isPending) return <DetailSkeleton />;
   if (error || !complaint) {
@@ -370,7 +370,9 @@ function MessageHistory({ complaintId }: { complaintId: string }) {
               <p className="mt-1 text-xs">
                 <span className="font-medium">{REPLY_KIND_META[message.reply_kind].label}</span>
                 <span className="text-muted-foreground">
-                  {message.reply_kind_source === "CITIZEN" ? " (marked by you)" : " (read by AI)"}
+                  {message.reply_kind_source === "DEPARTMENT"
+                    ? " (reported by the department)"
+                    : message.reply_kind_source === "CITIZEN" ? " (marked by you)" : " (read by AI)"}
                   {message.reference_number && ` · reference ${message.reference_number}`}
                 </span>
               </p>

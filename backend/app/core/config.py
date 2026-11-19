@@ -52,7 +52,8 @@ class Settings(BaseSettings):
     nominatim_user_agent: str = ""
 
     # AI (see app/integrations/ai_providers/)
-    ai_provider: Literal["mock", "anthropic"] = "mock"
+    ai_provider: Literal["mock", "anthropic", "ollama"] = "mock"
+    ollama_model: str = "gemma3:4b"
     mock_ai_scenario: Literal[
         "pothole", "streetlight", "garbage", "not_civic", "failure", "invalid"
     ] = "pothole"
@@ -82,6 +83,8 @@ class Settings(BaseSettings):
     scheduler_max_attempts: int = Field(3, ge=1, le=10)  # retries for a failing scheduled action
     # Development/demo only: simulated department replies and "skip ahead in time".
     enable_simulation: bool = False
+    department_access_code: SecretStr | None = Field(default=None, min_length=24)
+    department_authority_email: str = "roads@demo-city.example"
 
     @field_validator("anthropic_api_key", mode="before")
     @classmethod

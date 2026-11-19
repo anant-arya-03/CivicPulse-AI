@@ -49,12 +49,15 @@ export function useComplaintList(params: ComplaintListParams) {
   );
 }
 
-export function useComplaint(id: string | null) {
+const DEPARTMENT_REFRESH_INTERVAL = 5_000;
+
+export function useComplaint(id: string | null, followUpdates = false) {
   return useHydrationSafeQuery(
     useQuery({
       queryKey: complaintKeys.detail(id ?? ""),
       queryFn: ({ signal }) => complaintsApi.get(id!, signal),
       enabled: Boolean(id),
+      refetchInterval: followUpdates ? DEPARTMENT_REFRESH_INTERVAL : false,
     }),
   );
 }
@@ -64,6 +67,7 @@ export function useComplaintTimeline(id: string) {
     useQuery({
       queryKey: complaintKeys.timeline(id),
       queryFn: ({ signal }) => complaintsApi.timeline(id, signal),
+      refetchInterval: DEPARTMENT_REFRESH_INTERVAL,
     }),
   );
 }
@@ -232,6 +236,7 @@ export function useCommunications(complaintId: string) {
     useQuery({
       queryKey: complaintKeys.history(complaintId),
       queryFn: ({ signal }) => submissionApi.history(complaintId, signal),
+      refetchInterval: DEPARTMENT_REFRESH_INTERVAL,
     }),
   );
 }
@@ -261,6 +266,7 @@ export function useMonitoring(complaintId: string, enabled = true) {
       queryKey: complaintKeys.monitoring(complaintId),
       queryFn: ({ signal }) => monitoringApi.get(complaintId, signal),
       enabled,
+      refetchInterval: DEPARTMENT_REFRESH_INTERVAL,
     }),
   );
 }

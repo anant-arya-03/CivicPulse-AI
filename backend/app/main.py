@@ -7,10 +7,11 @@ import logging
 
 from fastapi import Depends, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 import app.models  # noqa: F401  (registers all ORM models)
 from app.api_router import api_router
-from app.core.config import get_settings
+from app.core.config import REPO_ROOT, get_settings
 from app.core.errors import register_error_handlers
 from app.core.security_headers import SecurityHeadersMiddleware
 from app.core.upload_limit import UploadSizeLimitMiddleware
@@ -48,6 +49,9 @@ def create_app() -> FastAPI:
 
     register_error_handlers(application)
     application.include_router(api_router)
+    portal_dir = REPO_ROOT / "department"
+    if settings.enable_simulation and not settings.is_production and portal_dir.is_dir():
+        application.mount("/department", StaticFiles(directory=portal_dir), name="department")
     return application
 
 

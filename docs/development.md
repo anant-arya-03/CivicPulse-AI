@@ -125,7 +125,8 @@ Key variables for Milestone 1:
 
 | Variable | Purpose |
 |---|---|
-| `AI_PROVIDER` | `mock` (default: free, offline, labelled "Demo AI") or `anthropic` (real Claude) |
+| `AI_PROVIDER` | `mock` (default, labelled "Demo AI"), `ollama` (local model), or `anthropic` (Claude API) |
+| `OLLAMA_MODEL` | Installed Ollama model tag, default `gemma3:4b`. Use a vision-capable model for photo analysis and repair comparisons. |
 | `MOCK_AI_SCENARIO` | what the mock answers: `pothole`, `streetlight`, `garbage`, `not_civic`, `failure` (simulates an outage), `invalid` (simulates a broken answer) |
 | `MOCK_AI_RESOLUTION` | what the mock says when comparing before/after photos (it doesn't look at them): `resolved` (default), `not_resolved`, `partial`, `unsure`, `different_place` |
 | `ANTHROPIC_API_KEY` | required for `anthropic`. Server-side only; never put it in the frontend. |
@@ -134,6 +135,8 @@ Key variables for Milestone 1:
 | `AI_TIMEOUT_SECONDS` | default 90 |
 
 To use real Claude: create a key at console.anthropic.com, then set `AI_PROVIDER=anthropic` and `ANTHROPIC_API_KEY=...` in `.env`, and restart the backend. Every photo analysis and every AI letter is one billed API call; the backend limits each client to 10 AI calls per minute. To see the error screens, set `MOCK_AI_SCENARIO=failure` and restart.
+
+For local inference, start the Ollama app on the same machine as FastAPI and verify the selected model appears at `http://127.0.0.1:11434/api/tags`. Set `AI_PROVIDER=ollama` and `OLLAMA_MODEL=gemma3:4b` in the root `.env` and restart the backend. Ollama handles the text and photo tasks through the same agent schemas and uses no Anthropic API key. Click **Analyse again** to replace a stored sample with a fresh analysis. Existing form values stay editable. For slower hardware, set `AI_TIMEOUT_SECONDS=180` in the root `.env` and `BACKEND_PROXY_TIMEOUT_MS=190000` in `frontend/.env.local`, then restart both servers. If Ollama is unavailable, use the workflow's manual paths or explicitly switch back to `mock`.
 
 ### Email / submission settings
 
@@ -226,10 +229,10 @@ The e2e tests use the **development** database and create users named `e2e-…@c
 | `connection refused :5432` | PostgreSQL isn't running. Windows: `Start-Service postgresql-x64-17` (admin). |
 | `TEST_DATABASE_URL must be a separate database…` | Point it at `civicpulse_test`, never at your main database. |
 | Supabase `prepared statement … already exists` | You used the transaction pooler (6543); switch to session/direct (5432). |
-| Website loads but every action fails / health shows 500 | The backend isn't running, or `BACKEND_URL` is wrong. |
+| Website loads but signup fails | Open `/api/v1/health` through the frontend. A 404 can mean a different server owns the backend port. A degraded result means CivicPulse cannot connect to PostgreSQL. If the database is reachable but tables are missing, run `alembic upgrade head` from `backend/`. |
 | Every POST returns `CSRF_FAILED` | Clear the site's cookies and log in again. The API client sends `X-CSRF-Token` automatically. |
 | `Too many attempts` on login | Rate limit (10/min per IP). Wait a minute or restart the backend. |
-| Port 3000 or 8000 already in use | Stop the other process, or run `npm run dev -- -p 3001` / `uvicorn ... --port 8001` (then set `BACKEND_URL`). |
+| Port 3000 or 8000 already in use | Stop the other process, or choose another port. On Windows, run `powershell -ExecutionPolicy Bypass -File scripts\dev.ps1 -BackendPort 8001` to start the API on 8001 and point Next.js at it. For separately started servers, set `BACKEND_URL` to the API URL before starting Next.js. |
 | Dev server (and e2e tests) suddenly 3× slower, tests time out on `toHaveURL` | You ran `npm run build` earlier; its output in `frontend/.next` slows `next dev` down. Stop the dev server, delete the `frontend/.next` folder, and start it again. |
 | `Another next dev server is already running` / e2e fails with strange "worker" errors | A dev server from an interrupted test run is still alive. It prints its PID; stop it with `taskkill /PID <pid> /F` (Windows) or `kill <pid>`. |
 | Backend won't start: `AI_PROVIDER=anthropic needs ANTHROPIC_API_KEY…` | Add the key to `.env`, or set `AI_PROVIDER=mock`. |

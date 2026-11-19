@@ -17,6 +17,7 @@ class ReplyKind(StrEnum):
 class ReplyKindSource(StrEnum):
     AI = "AI"
     CITIZEN = "CITIZEN"
+    DEPARTMENT = "DEPARTMENT"
 
 
 class ActionType(StrEnum):

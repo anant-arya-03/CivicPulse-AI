@@ -222,12 +222,13 @@ def _clean_inbound(text: str) -> str:
 
 def receive_reply(
     db: Session,
-    ai: AIProvider,
+    ai: AIProvider | None,
     complaint: Complaint,
     *,
     subject: str,
     body: str,
     is_simulated: bool,
+    reported_kind: ReplyKind | None = None,
 ) -> Communication:
     """Store a department's reply, let the AI suggest its meaning, and apply the fixed rules
     if the AI is confident. Otherwise the citizen is asked. The caller commits."""
@@ -265,6 +266,12 @@ def receive_reply(
         details={"communication_id": str(reply.id), "is_simulated": is_simulated},
     )
 
+    if reported_kind is not None:
+        _apply_reply_kind(db, complaint, reply, reported_kind, source=ReplyKindSource.DEPARTMENT)
+        db.flush()
+        return reply
+
+    assert ai is not None  # Unstructured replies need a provider for the classification attempt.
     result = ai_service.classify_reply(db, ai, complaint, reply)
     own = complaint.public_reference
     suggested = result.output.reference_number if result else None
@@ -297,13 +304,18 @@ def _apply_reply_kind(
 ) -> None:
     reply.reply_kind = kind.value
     reply.reply_kind_source = source.value
-    who = "You" if source == ReplyKindSource.CITIZEN else ("Demo AI" if is_mock else "AI")
+    if source == ReplyKindSource.DEPARTMENT:
+        actor, description = Actor.AUTHORITY, f"Department update: {REPLY_KIND_LABELS[kind]}."
+    else:
+        who = "You" if source == ReplyKindSource.CITIZEN else ("Demo AI" if is_mock else "AI")
+        actor = Actor.CITIZEN if source == ReplyKindSource.CITIZEN else Actor.AI
+        description = f"{who} marked the reply as: {REPLY_KIND_LABELS[kind]}."
     complaint_service.record_event(
         db,
         complaint,
         EventType.REPLY_CLASSIFIED,
-        f"{who} marked the reply as: {REPLY_KIND_LABELS[kind]}.",
-        actor=Actor.CITIZEN if source == ReplyKindSource.CITIZEN else Actor.AI,
+        description,
+        actor=actor,
         details={"communication_id": str(reply.id), "kind": kind.value, "is_mock": is_mock},
     )
 

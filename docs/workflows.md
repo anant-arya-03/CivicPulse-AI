@@ -231,6 +231,10 @@ Only the mock provider exists, and it never contacts anyone (`is_simulated = tru
 
 ## Milestone 7 preferences and notifications
 
+### Department operator demonstration
+
+Open the [department inbox](../department/README.md) alongside the citizen complaint page. A report arrives after the citizen approves and completes a simulated send to the operator's configured department. The operator can start work or report a completed repair. Each action creates a simulated inbound reply with a structured meaning supplied by the operator. The ordinary reply rules update the timeline and reminders. A repair claim moves the case to `RESOLVED_PENDING_VERIFICATION`, and the citizen page shows the repair check automatically.
+
 The app shell includes an expandable notification bell, refreshed every 30 seconds. Mark all as read advances only through the newest displayed event. Preferences control reminders/escalations and reply/status notifications independently. Settings also controls the name and map coordinates in newly generated letters. Existing drafts and approval snapshots remain unchanged; citizens must explicitly review or regenerate them. Password changes revoke all sessions. Demo tools now includes a guided story; all existing approval gates still apply. Deployment instructions: deployment.md.
 
 

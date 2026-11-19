@@ -10,6 +10,7 @@ from app.modules.authorities.router import router as authorities_router
 from app.modules.communications.router import router as communications_router
 from app.modules.complaints.router import dashboard_router
 from app.modules.complaints.router import router as complaints_router
+from app.modules.department_portal.router import router as department_portal_router
 from app.modules.evidence.router import router as evidence_router
 from app.modules.locations.router import router as locations_router
 from app.modules.monitoring.router import router as monitoring_router
@@ -39,6 +40,7 @@ api_router.include_router(locations_router)
 api_router.include_router(ai_router)
 api_router.include_router(authorities_router)
 api_router.include_router(communications_router)
+api_router.include_router(department_portal_router)
 api_router.include_router(monitoring_router)
 api_router.include_router(resolutions_router)
 

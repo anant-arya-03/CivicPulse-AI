@@ -321,7 +321,7 @@ export interface Communication {
   followup_number: number | null;
   /** Replies: what it means. null = the citizen still has to say. */
   reply_kind: ReplyKind | null;
-  reply_kind_source: "AI" | "CITIZEN" | null;
+  reply_kind_source: "AI" | "CITIZEN" | "DEPARTMENT" | null;
   reply_summary: string | null;
   reference_number: string | null;
 }
