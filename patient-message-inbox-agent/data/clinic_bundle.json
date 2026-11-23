@@ -1,0 +1,2774 @@
+{
+ "resourceType": "Bundle",
+ "type": "collection",
+ "meta": {
+  "tag": [
+   {
+    "display": "Hand-created synthetic teaching data; FHIR R4 4.0.1 shapes"
+   }
+  ]
+ },
+ "entry": [
+  {
+   "fullUrl": "Practitioner/PR1",
+   "resource": {
+    "resourceType": "Practitioner",
+    "id": "PR1",
+    "name": [
+     {
+      "prefix": [
+       "Dr"
+      ],
+      "given": [
+       "Meera"
+      ],
+      "family": "Iyer"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "Schedule/SCH-PR1",
+   "resource": {
+    "resourceType": "Schedule",
+    "id": "SCH-PR1",
+    "actor": [
+     {
+      "reference": "Practitioner/PR1"
+     }
+    ],
+    "serviceType": [
+     {
+      "text": "Family medicine outpatient"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "Practitioner/PR2",
+   "resource": {
+    "resourceType": "Practitioner",
+    "id": "PR2",
+    "name": [
+     {
+      "prefix": [
+       "Dr"
+      ],
+      "given": [
+       "Arjun"
+      ],
+      "family": "Mehta"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "Schedule/SCH-PR2",
+   "resource": {
+    "resourceType": "Schedule",
+    "id": "SCH-PR2",
+    "actor": [
+     {
+      "reference": "Practitioner/PR2"
+     }
+    ],
+    "serviceType": [
+     {
+      "text": "Family medicine outpatient"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "Patient/P01",
+   "resource": {
+    "resourceType": "Patient",
+    "id": "P01",
+    "name": [
+     {
+      "given": [
+       "Asha"
+      ],
+      "family": "Verma"
+     }
+    ],
+    "gender": "female",
+    "birthDate": "1968-03-14",
+    "communication": [
+     {
+      "language": {
+       "text": "Hindi"
+      },
+      "preferred": true
+     }
+    ],
+    "generalPractitioner": [
+     {
+      "reference": "Practitioner/PR1"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "Patient/P02",
+   "resource": {
+    "resourceType": "Patient",
+    "id": "P02",
+    "name": [
+     {
+      "given": [
+       "Rohan"
+      ],
+      "family": "Kapoor"
+     }
+    ],
+    "gender": "male",
+    "birthDate": "1991-07-02",
+    "communication": [
+     {
+      "language": {
+       "text": "English"
+      },
+      "preferred": true
+     }
+    ],
+    "generalPractitioner": [
+     {
+      "reference": "Practitioner/PR2"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "Patient/P03",
+   "resource": {
+    "resourceType": "Patient",
+    "id": "P03",
+    "name": [
+     {
+      "given": [
+       "Sunita"
+      ],
+      "family": "Rao"
+     }
+    ],
+    "gender": "female",
+    "birthDate": "1959-11-21",
+    "communication": [
+     {
+      "language": {
+       "text": "English"
+      },
+      "preferred": true
+     }
+    ],
+    "generalPractitioner": [
+     {
+      "reference": "Practitioner/PR1"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "Patient/P04",
+   "resource": {
+    "resourceType": "Patient",
+    "id": "P04",
+    "name": [
+     {
+      "given": [
+       "Vikram"
+      ],
+      "family": "Singh"
+     }
+    ],
+    "gender": "male",
+    "birthDate": "1972-01-30",
+    "communication": [
+     {
+      "language": {
+       "text": "Hindi"
+      },
+      "preferred": true
+     }
+    ],
+    "generalPractitioner": [
+     {
+      "reference": "Practitioner/PR2"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "Patient/P05",
+   "resource": {
+    "resourceType": "Patient",
+    "id": "P05",
+    "name": [
+     {
+      "given": [
+       "Neha"
+      ],
+      "family": "Joshi"
+     }
+    ],
+    "gender": "female",
+    "birthDate": "1988-05-09",
+    "communication": [
+     {
+      "language": {
+       "text": "English"
+      },
+      "preferred": true
+     }
+    ],
+    "generalPractitioner": [
+     {
+      "reference": "Practitioner/PR1"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "Patient/P06",
+   "resource": {
+    "resourceType": "Patient",
+    "id": "P06",
+    "name": [
+     {
+      "given": [
+       "Imran"
+      ],
+      "family": "Khan"
+     }
+    ],
+    "gender": "male",
+    "birthDate": "1965-09-17",
+    "communication": [
+     {
+      "language": {
+       "text": "Hindi"
+      },
+      "preferred": true
+     }
+    ],
+    "generalPractitioner": [
+     {
+      "reference": "Practitioner/PR2"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "Patient/P07",
+   "resource": {
+    "resourceType": "Patient",
+    "id": "P07",
+    "name": [
+     {
+      "given": [
+       "Kavita"
+      ],
+      "family": "Nair"
+     }
+    ],
+    "gender": "female",
+    "birthDate": "1970-12-05",
+    "communication": [
+     {
+      "language": {
+       "text": "English"
+      },
+      "preferred": true
+     }
+    ],
+    "generalPractitioner": [
+     {
+      "reference": "Practitioner/PR1"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "Patient/P08",
+   "resource": {
+    "resourceType": "Patient",
+    "id": "P08",
+    "name": [
+     {
+      "given": [
+       "Deepak"
+      ],
+      "family": "Gupta"
+     }
+    ],
+    "gender": "male",
+    "birthDate": "1983-04-25",
+    "communication": [
+     {
+      "language": {
+       "text": "Hindi"
+      },
+      "preferred": true
+     }
+    ],
+    "generalPractitioner": [
+     {
+      "reference": "Practitioner/PR2"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "Patient/P09",
+   "resource": {
+    "resourceType": "Patient",
+    "id": "P09",
+    "name": [
+     {
+      "given": [
+       "Farah"
+      ],
+      "family": "Ali"
+     }
+    ],
+    "gender": "female",
+    "birthDate": "1979-08-11",
+    "communication": [
+     {
+      "language": {
+       "text": "English"
+      },
+      "preferred": true
+     }
+    ],
+    "generalPractitioner": [
+     {
+      "reference": "Practitioner/PR1"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "Patient/P10",
+   "resource": {
+    "resourceType": "Patient",
+    "id": "P10",
+    "name": [
+     {
+      "given": [
+       "Suresh"
+      ],
+      "family": "Pillai"
+     }
+    ],
+    "gender": "male",
+    "birthDate": "1955-02-28",
+    "communication": [
+     {
+      "language": {
+       "text": "English"
+      },
+      "preferred": true
+     }
+    ],
+    "generalPractitioner": [
+     {
+      "reference": "Practitioner/PR2"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "Patient/P11",
+   "resource": {
+    "resourceType": "Patient",
+    "id": "P11",
+    "name": [
+     {
+      "given": [
+       "Meenakshi"
+      ],
+      "family": "Das"
+     }
+    ],
+    "gender": "female",
+    "birthDate": "1962-06-19",
+    "communication": [
+     {
+      "language": {
+       "text": "Hindi"
+      },
+      "preferred": true
+     }
+    ],
+    "generalPractitioner": [
+     {
+      "reference": "Practitioner/PR1"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "Patient/P12",
+   "resource": {
+    "resourceType": "Patient",
+    "id": "P12",
+    "name": [
+     {
+      "given": [
+       "Arvind"
+      ],
+      "family": "Bose"
+     }
+    ],
+    "gender": "male",
+    "birthDate": "1994-10-03",
+    "communication": [
+     {
+      "language": {
+       "text": "English"
+      },
+      "preferred": true
+     }
+    ],
+    "generalPractitioner": [
+     {
+      "reference": "Practitioner/PR2"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "Patient/P13",
+   "resource": {
+    "resourceType": "Patient",
+    "id": "P13",
+    "name": [
+     {
+      "given": [
+       "Pooja"
+      ],
+      "family": "Sharma"
+     }
+    ],
+    "gender": "female",
+    "birthDate": "2001-01-15",
+    "communication": [
+     {
+      "language": {
+       "text": "Hindi"
+      },
+      "preferred": true
+     }
+    ],
+    "generalPractitioner": [
+     {
+      "reference": "Practitioner/PR1"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "Patient/P14",
+   "resource": {
+    "resourceType": "Patient",
+    "id": "P14",
+    "name": [
+     {
+      "given": [
+       "Rahul"
+      ],
+      "family": "Menon"
+     }
+    ],
+    "gender": "male",
+    "birthDate": "1976-03-08",
+    "communication": [
+     {
+      "language": {
+       "text": "English"
+      },
+      "preferred": true
+     }
+    ],
+    "generalPractitioner": [
+     {
+      "reference": "Practitioner/PR2"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "Patient/P15",
+   "resource": {
+    "resourceType": "Patient",
+    "id": "P15",
+    "name": [
+     {
+      "given": [
+       "Lakshmi"
+      ],
+      "family": "Reddy"
+     }
+    ],
+    "gender": "female",
+    "birthDate": "1950-07-27",
+    "communication": [
+     {
+      "language": {
+       "text": "English"
+      },
+      "preferred": true
+     }
+    ],
+    "generalPractitioner": [
+     {
+      "reference": "Practitioner/PR1"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1109-0900",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1109-0900",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-09T09:00:00+05:30",
+    "end": "2026-11-09T09:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1109-1000",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1109-1000",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "busy",
+    "start": "2026-11-09T10:00:00+05:30",
+    "end": "2026-11-09T10:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1109-1100",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1109-1100",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-09T11:00:00+05:30",
+    "end": "2026-11-09T11:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1109-1400",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1109-1400",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-09T14:00:00+05:30",
+    "end": "2026-11-09T14:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1109-1500",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1109-1500",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-09T15:00:00+05:30",
+    "end": "2026-11-09T15:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1109-1600",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1109-1600",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-09T16:00:00+05:30",
+    "end": "2026-11-09T16:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1109-0900",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1109-0900",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-09T09:00:00+05:30",
+    "end": "2026-11-09T09:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1109-1000",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1109-1000",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-09T10:00:00+05:30",
+    "end": "2026-11-09T10:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1109-1100",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1109-1100",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-09T11:00:00+05:30",
+    "end": "2026-11-09T11:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1109-1400",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1109-1400",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-09T14:00:00+05:30",
+    "end": "2026-11-09T14:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1109-1500",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1109-1500",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-09T15:00:00+05:30",
+    "end": "2026-11-09T15:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1109-1600",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1109-1600",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-09T16:00:00+05:30",
+    "end": "2026-11-09T16:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1110-0900",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1110-0900",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-10T09:00:00+05:30",
+    "end": "2026-11-10T09:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1110-1000",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1110-1000",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-10T10:00:00+05:30",
+    "end": "2026-11-10T10:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1110-1100",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1110-1100",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-10T11:00:00+05:30",
+    "end": "2026-11-10T11:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1110-1400",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1110-1400",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-10T14:00:00+05:30",
+    "end": "2026-11-10T14:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1110-1500",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1110-1500",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-10T15:00:00+05:30",
+    "end": "2026-11-10T15:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1110-1600",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1110-1600",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-10T16:00:00+05:30",
+    "end": "2026-11-10T16:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1110-0900",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1110-0900",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-10T09:00:00+05:30",
+    "end": "2026-11-10T09:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1110-1000",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1110-1000",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-10T10:00:00+05:30",
+    "end": "2026-11-10T10:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1110-1100",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1110-1100",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-10T11:00:00+05:30",
+    "end": "2026-11-10T11:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1110-1400",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1110-1400",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-10T14:00:00+05:30",
+    "end": "2026-11-10T14:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1110-1500",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1110-1500",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "busy",
+    "start": "2026-11-10T15:00:00+05:30",
+    "end": "2026-11-10T15:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1110-1600",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1110-1600",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-10T16:00:00+05:30",
+    "end": "2026-11-10T16:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1111-0900",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1111-0900",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-11T09:00:00+05:30",
+    "end": "2026-11-11T09:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1111-1000",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1111-1000",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-11T10:00:00+05:30",
+    "end": "2026-11-11T10:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1111-1100",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1111-1100",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-11T11:00:00+05:30",
+    "end": "2026-11-11T11:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1111-1400",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1111-1400",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-11T14:00:00+05:30",
+    "end": "2026-11-11T14:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1111-1500",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1111-1500",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-11T15:00:00+05:30",
+    "end": "2026-11-11T15:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1111-1600",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1111-1600",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-11T16:00:00+05:30",
+    "end": "2026-11-11T16:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1111-0900",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1111-0900",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "busy",
+    "start": "2026-11-11T09:00:00+05:30",
+    "end": "2026-11-11T09:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1111-1000",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1111-1000",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-11T10:00:00+05:30",
+    "end": "2026-11-11T10:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1111-1100",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1111-1100",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-11T11:00:00+05:30",
+    "end": "2026-11-11T11:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1111-1400",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1111-1400",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-11T14:00:00+05:30",
+    "end": "2026-11-11T14:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1111-1500",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1111-1500",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-11T15:00:00+05:30",
+    "end": "2026-11-11T15:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1111-1600",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1111-1600",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-11T16:00:00+05:30",
+    "end": "2026-11-11T16:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1112-0900",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1112-0900",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-12T09:00:00+05:30",
+    "end": "2026-11-12T09:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1112-1000",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1112-1000",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-12T10:00:00+05:30",
+    "end": "2026-11-12T10:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1112-1100",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1112-1100",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-12T11:00:00+05:30",
+    "end": "2026-11-12T11:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1112-1400",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1112-1400",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-12T14:00:00+05:30",
+    "end": "2026-11-12T14:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1112-1500",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1112-1500",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "busy",
+    "start": "2026-11-12T15:00:00+05:30",
+    "end": "2026-11-12T15:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1112-1600",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1112-1600",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-12T16:00:00+05:30",
+    "end": "2026-11-12T16:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1112-0900",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1112-0900",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-12T09:00:00+05:30",
+    "end": "2026-11-12T09:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1112-1000",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1112-1000",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-12T10:00:00+05:30",
+    "end": "2026-11-12T10:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1112-1100",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1112-1100",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "busy",
+    "start": "2026-11-12T11:00:00+05:30",
+    "end": "2026-11-12T11:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1112-1400",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1112-1400",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-12T14:00:00+05:30",
+    "end": "2026-11-12T14:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1112-1500",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1112-1500",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-12T15:00:00+05:30",
+    "end": "2026-11-12T15:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1112-1600",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1112-1600",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-12T16:00:00+05:30",
+    "end": "2026-11-12T16:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1113-0900",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1113-0900",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-13T09:00:00+05:30",
+    "end": "2026-11-13T09:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1113-1000",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1113-1000",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-13T10:00:00+05:30",
+    "end": "2026-11-13T10:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1113-1100",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1113-1100",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-13T11:00:00+05:30",
+    "end": "2026-11-13T11:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1113-1400",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1113-1400",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-13T14:00:00+05:30",
+    "end": "2026-11-13T14:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1113-1500",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1113-1500",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-13T15:00:00+05:30",
+    "end": "2026-11-13T15:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1113-1600",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1113-1600",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-13T16:00:00+05:30",
+    "end": "2026-11-13T16:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1113-0900",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1113-0900",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-13T09:00:00+05:30",
+    "end": "2026-11-13T09:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1113-1000",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1113-1000",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-13T10:00:00+05:30",
+    "end": "2026-11-13T10:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1113-1100",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1113-1100",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-13T11:00:00+05:30",
+    "end": "2026-11-13T11:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1113-1400",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1113-1400",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "busy",
+    "start": "2026-11-13T14:00:00+05:30",
+    "end": "2026-11-13T14:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1113-1500",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1113-1500",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-13T15:00:00+05:30",
+    "end": "2026-11-13T15:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1113-1600",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1113-1600",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-13T16:00:00+05:30",
+    "end": "2026-11-13T16:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1116-0900",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1116-0900",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "busy",
+    "start": "2026-11-16T09:00:00+05:30",
+    "end": "2026-11-16T09:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1116-1000",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1116-1000",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-16T10:00:00+05:30",
+    "end": "2026-11-16T10:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1116-1100",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1116-1100",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-16T11:00:00+05:30",
+    "end": "2026-11-16T11:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1116-1400",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1116-1400",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-16T14:00:00+05:30",
+    "end": "2026-11-16T14:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1116-1500",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1116-1500",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-16T15:00:00+05:30",
+    "end": "2026-11-16T15:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1116-1600",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1116-1600",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-16T16:00:00+05:30",
+    "end": "2026-11-16T16:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1116-0900",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1116-0900",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-16T09:00:00+05:30",
+    "end": "2026-11-16T09:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1116-1000",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1116-1000",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-16T10:00:00+05:30",
+    "end": "2026-11-16T10:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1116-1100",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1116-1100",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-16T11:00:00+05:30",
+    "end": "2026-11-16T11:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1116-1400",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1116-1400",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-16T14:00:00+05:30",
+    "end": "2026-11-16T14:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1116-1500",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1116-1500",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-16T15:00:00+05:30",
+    "end": "2026-11-16T15:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1116-1600",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1116-1600",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-16T16:00:00+05:30",
+    "end": "2026-11-16T16:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1117-0900",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1117-0900",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-17T09:00:00+05:30",
+    "end": "2026-11-17T09:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1117-1000",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1117-1000",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-17T10:00:00+05:30",
+    "end": "2026-11-17T10:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1117-1100",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1117-1100",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-17T11:00:00+05:30",
+    "end": "2026-11-17T11:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1117-1400",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1117-1400",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-17T14:00:00+05:30",
+    "end": "2026-11-17T14:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1117-1500",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1117-1500",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-17T15:00:00+05:30",
+    "end": "2026-11-17T15:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1117-1600",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1117-1600",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-17T16:00:00+05:30",
+    "end": "2026-11-17T16:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1117-0900",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1117-0900",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-17T09:00:00+05:30",
+    "end": "2026-11-17T09:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1117-1000",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1117-1000",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "busy",
+    "start": "2026-11-17T10:00:00+05:30",
+    "end": "2026-11-17T10:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1117-1100",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1117-1100",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-17T11:00:00+05:30",
+    "end": "2026-11-17T11:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1117-1400",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1117-1400",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-17T14:00:00+05:30",
+    "end": "2026-11-17T14:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1117-1500",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1117-1500",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-17T15:00:00+05:30",
+    "end": "2026-11-17T15:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1117-1600",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1117-1600",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-17T16:00:00+05:30",
+    "end": "2026-11-17T16:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1118-0900",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1118-0900",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-18T09:00:00+05:30",
+    "end": "2026-11-18T09:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1118-1000",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1118-1000",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-18T10:00:00+05:30",
+    "end": "2026-11-18T10:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1118-1100",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1118-1100",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-18T11:00:00+05:30",
+    "end": "2026-11-18T11:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1118-1400",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1118-1400",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-18T14:00:00+05:30",
+    "end": "2026-11-18T14:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1118-1500",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1118-1500",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-18T15:00:00+05:30",
+    "end": "2026-11-18T15:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1118-1600",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1118-1600",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "busy",
+    "start": "2026-11-18T16:00:00+05:30",
+    "end": "2026-11-18T16:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1118-0900",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1118-0900",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-18T09:00:00+05:30",
+    "end": "2026-11-18T09:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1118-1000",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1118-1000",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-18T10:00:00+05:30",
+    "end": "2026-11-18T10:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1118-1100",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1118-1100",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-18T11:00:00+05:30",
+    "end": "2026-11-18T11:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1118-1400",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1118-1400",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-18T14:00:00+05:30",
+    "end": "2026-11-18T14:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1118-1500",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1118-1500",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-18T15:00:00+05:30",
+    "end": "2026-11-18T15:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1118-1600",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1118-1600",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-18T16:00:00+05:30",
+    "end": "2026-11-18T16:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1119-0900",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1119-0900",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-19T09:00:00+05:30",
+    "end": "2026-11-19T09:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1119-1000",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1119-1000",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-19T10:00:00+05:30",
+    "end": "2026-11-19T10:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1119-1100",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1119-1100",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-19T11:00:00+05:30",
+    "end": "2026-11-19T11:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1119-1400",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1119-1400",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "busy",
+    "start": "2026-11-19T14:00:00+05:30",
+    "end": "2026-11-19T14:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1119-1500",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1119-1500",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-19T15:00:00+05:30",
+    "end": "2026-11-19T15:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1119-1600",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1119-1600",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-19T16:00:00+05:30",
+    "end": "2026-11-19T16:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1119-0900",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1119-0900",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-19T09:00:00+05:30",
+    "end": "2026-11-19T09:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1119-1000",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1119-1000",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-19T10:00:00+05:30",
+    "end": "2026-11-19T10:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1119-1100",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1119-1100",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-19T11:00:00+05:30",
+    "end": "2026-11-19T11:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1119-1400",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1119-1400",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-19T14:00:00+05:30",
+    "end": "2026-11-19T14:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1119-1500",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1119-1500",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-19T15:00:00+05:30",
+    "end": "2026-11-19T15:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1119-1600",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1119-1600",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-19T16:00:00+05:30",
+    "end": "2026-11-19T16:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1120-0900",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1120-0900",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-20T09:00:00+05:30",
+    "end": "2026-11-20T09:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1120-1000",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1120-1000",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-20T10:00:00+05:30",
+    "end": "2026-11-20T10:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1120-1100",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1120-1100",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-20T11:00:00+05:30",
+    "end": "2026-11-20T11:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1120-1400",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1120-1400",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-20T14:00:00+05:30",
+    "end": "2026-11-20T14:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1120-1500",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1120-1500",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-20T15:00:00+05:30",
+    "end": "2026-11-20T15:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR1-1120-1600",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR1-1120-1600",
+    "schedule": {
+     "reference": "Schedule/SCH-PR1"
+    },
+    "status": "free",
+    "start": "2026-11-20T16:00:00+05:30",
+    "end": "2026-11-20T16:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1120-0900",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1120-0900",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-20T09:00:00+05:30",
+    "end": "2026-11-20T09:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1120-1000",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1120-1000",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-20T10:00:00+05:30",
+    "end": "2026-11-20T10:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1120-1100",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1120-1100",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "busy",
+    "start": "2026-11-20T11:00:00+05:30",
+    "end": "2026-11-20T11:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1120-1400",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1120-1400",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-20T14:00:00+05:30",
+    "end": "2026-11-20T14:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1120-1500",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1120-1500",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-20T15:00:00+05:30",
+    "end": "2026-11-20T15:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Slot/S-PR2-1120-1600",
+   "resource": {
+    "resourceType": "Slot",
+    "id": "S-PR2-1120-1600",
+    "schedule": {
+     "reference": "Schedule/SCH-PR2"
+    },
+    "status": "free",
+    "start": "2026-11-20T16:00:00+05:30",
+    "end": "2026-11-20T16:30:00+05:30"
+   }
+  },
+  {
+   "fullUrl": "Appointment/A01",
+   "resource": {
+    "resourceType": "Appointment",
+    "id": "A01",
+    "status": "booked",
+    "serviceType": [
+     {
+      "text": "Blood pressure review"
+     }
+    ],
+    "slot": [
+     {
+      "reference": "Slot/S-PR1-1109-1000"
+     }
+    ],
+    "start": "2026-11-09T10:00:00+05:30",
+    "end": "2026-11-09T10:30:00+05:30",
+    "participant": [
+     {
+      "actor": {
+       "reference": "Patient/P01"
+      },
+      "status": "accepted"
+     },
+     {
+      "actor": {
+       "reference": "Practitioner/PR1"
+      },
+      "status": "accepted"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "Appointment/A02",
+   "resource": {
+    "resourceType": "Appointment",
+    "id": "A02",
+    "status": "booked",
+    "serviceType": [
+     {
+      "text": "General consultation"
+     }
+    ],
+    "slot": [
+     {
+      "reference": "Slot/S-PR2-1110-1500"
+     }
+    ],
+    "start": "2026-11-10T15:00:00+05:30",
+    "end": "2026-11-10T15:30:00+05:30",
+    "participant": [
+     {
+      "actor": {
+       "reference": "Patient/P02"
+      },
+      "status": "accepted"
+     },
+     {
+      "actor": {
+       "reference": "Practitioner/PR2"
+      },
+      "status": "accepted"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "Appointment/A03",
+   "resource": {
+    "resourceType": "Appointment",
+    "id": "A03",
+    "status": "booked",
+    "serviceType": [
+     {
+      "text": "Blood pressure review"
+     }
+    ],
+    "slot": [
+     {
+      "reference": "Slot/S-PR2-1111-0900"
+     }
+    ],
+    "start": "2026-11-11T09:00:00+05:30",
+    "end": "2026-11-11T09:30:00+05:30",
+    "participant": [
+     {
+      "actor": {
+       "reference": "Patient/P04"
+      },
+      "status": "accepted"
+     },
+     {
+      "actor": {
+       "reference": "Practitioner/PR2"
+      },
+      "status": "accepted"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "Appointment/A04",
+   "resource": {
+    "resourceType": "Appointment",
+    "id": "A04",
+    "status": "booked",
+    "serviceType": [
+     {
+      "text": "General consultation"
+     }
+    ],
+    "slot": [
+     {
+      "reference": "Slot/S-PR2-1112-1100"
+     }
+    ],
+    "start": "2026-11-12T11:00:00+05:30",
+    "end": "2026-11-12T11:30:00+05:30",
+    "participant": [
+     {
+      "actor": {
+       "reference": "Patient/P06"
+      },
+      "status": "accepted"
+     },
+     {
+      "actor": {
+       "reference": "Practitioner/PR2"
+      },
+      "status": "accepted"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "Appointment/A05",
+   "resource": {
+    "resourceType": "Appointment",
+    "id": "A05",
+    "status": "booked",
+    "serviceType": [
+     {
+      "text": "Diabetes review"
+     }
+    ],
+    "slot": [
+     {
+      "reference": "Slot/S-PR1-1112-1500"
+     }
+    ],
+    "start": "2026-11-12T15:00:00+05:30",
+    "end": "2026-11-12T15:30:00+05:30",
+    "participant": [
+     {
+      "actor": {
+       "reference": "Patient/P07"
+      },
+      "status": "accepted"
+     },
+     {
+      "actor": {
+       "reference": "Practitioner/PR1"
+      },
+      "status": "accepted"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "Appointment/A06",
+   "resource": {
+    "resourceType": "Appointment",
+    "id": "A06",
+    "status": "booked",
+    "serviceType": [
+     {
+      "text": "General consultation"
+     }
+    ],
+    "slot": [
+     {
+      "reference": "Slot/S-PR2-1113-1400"
+     }
+    ],
+    "start": "2026-11-13T14:00:00+05:30",
+    "end": "2026-11-13T14:30:00+05:30",
+    "participant": [
+     {
+      "actor": {
+       "reference": "Patient/P08"
+      },
+      "status": "accepted"
+     },
+     {
+      "actor": {
+       "reference": "Practitioner/PR2"
+      },
+      "status": "accepted"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "Appointment/A07",
+   "resource": {
+    "resourceType": "Appointment",
+    "id": "A07",
+    "status": "booked",
+    "serviceType": [
+     {
+      "text": "Thyroid review"
+     }
+    ],
+    "slot": [
+     {
+      "reference": "Slot/S-PR1-1116-0900"
+     }
+    ],
+    "start": "2026-11-16T09:00:00+05:30",
+    "end": "2026-11-16T09:30:00+05:30",
+    "participant": [
+     {
+      "actor": {
+       "reference": "Patient/P09"
+      },
+      "status": "accepted"
+     },
+     {
+      "actor": {
+       "reference": "Practitioner/PR1"
+      },
+      "status": "accepted"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "Appointment/A08",
+   "resource": {
+    "resourceType": "Appointment",
+    "id": "A08",
+    "status": "booked",
+    "serviceType": [
+     {
+      "text": "Kidney function review"
+     }
+    ],
+    "slot": [
+     {
+      "reference": "Slot/S-PR2-1117-1000"
+     }
+    ],
+    "start": "2026-11-17T10:00:00+05:30",
+    "end": "2026-11-17T10:30:00+05:30",
+    "participant": [
+     {
+      "actor": {
+       "reference": "Patient/P10"
+      },
+      "status": "accepted"
+     },
+     {
+      "actor": {
+       "reference": "Practitioner/PR2"
+      },
+      "status": "accepted"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "Appointment/A09",
+   "resource": {
+    "resourceType": "Appointment",
+    "id": "A09",
+    "status": "booked",
+    "serviceType": [
+     {
+      "text": "Cholesterol review"
+     }
+    ],
+    "slot": [
+     {
+      "reference": "Slot/S-PR1-1118-1600"
+     }
+    ],
+    "start": "2026-11-18T16:00:00+05:30",
+    "end": "2026-11-18T16:30:00+05:30",
+    "participant": [
+     {
+      "actor": {
+       "reference": "Patient/P11"
+      },
+      "status": "accepted"
+     },
+     {
+      "actor": {
+       "reference": "Practitioner/PR1"
+      },
+      "status": "accepted"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "Appointment/A10",
+   "resource": {
+    "resourceType": "Appointment",
+    "id": "A10",
+    "status": "booked",
+    "serviceType": [
+     {
+      "text": "General consultation"
+     }
+    ],
+    "slot": [
+     {
+      "reference": "Slot/S-PR1-1119-1400"
+     }
+    ],
+    "start": "2026-11-19T14:00:00+05:30",
+    "end": "2026-11-19T14:30:00+05:30",
+    "participant": [
+     {
+      "actor": {
+       "reference": "Patient/P13"
+      },
+      "status": "accepted"
+     },
+     {
+      "actor": {
+       "reference": "Practitioner/PR1"
+      },
+      "status": "accepted"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "Appointment/A11",
+   "resource": {
+    "resourceType": "Appointment",
+    "id": "A11",
+    "status": "booked",
+    "serviceType": [
+     {
+      "text": "General consultation"
+     }
+    ],
+    "slot": [
+     {
+      "reference": "Slot/S-PR2-1120-1100"
+     }
+    ],
+    "start": "2026-11-20T11:00:00+05:30",
+    "end": "2026-11-20T11:30:00+05:30",
+    "participant": [
+     {
+      "actor": {
+       "reference": "Patient/P14"
+      },
+      "status": "accepted"
+     },
+     {
+      "actor": {
+       "reference": "Practitioner/PR2"
+      },
+      "status": "accepted"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "Appointment/A12",
+   "resource": {
+    "resourceType": "Appointment",
+    "id": "A12",
+    "status": "cancelled",
+    "serviceType": [
+     {
+      "text": "Diabetes review"
+     }
+    ],
+    "slot": [
+     {
+      "reference": "Slot/S-PR1-1110-0900"
+     }
+    ],
+    "start": "2026-11-10T09:00:00+05:30",
+    "end": "2026-11-10T09:30:00+05:30",
+    "participant": [
+     {
+      "actor": {
+       "reference": "Patient/P03"
+      },
+      "status": "accepted"
+     },
+     {
+      "actor": {
+       "reference": "Practitioner/PR1"
+      },
+      "status": "accepted"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "Observation/O01",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "O01",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "4548-4",
+       "display": "Hemoglobin A1c/Hemoglobin.total in Blood"
+      }
+     ]
+    },
+    "subject": {
+     "reference": "Patient/P07"
+    },
+    "effectiveDateTime": "2026-11-03",
+    "valueQuantity": {
+     "value": 7.9,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  },
+  {
+   "fullUrl": "Observation/O02",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "O02",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "4548-4",
+       "display": "Hemoglobin A1c/Hemoglobin.total in Blood"
+      }
+     ]
+    },
+    "subject": {
+     "reference": "Patient/P03"
+    },
+    "effectiveDateTime": "2026-11-02",
+    "valueQuantity": {
+     "value": 6.4,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  },
+  {
+   "fullUrl": "Observation/O03",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "O03",
+    "status": "registered",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "718-7",
+       "display": "Hemoglobin [Mass/volume] in Blood"
+      }
+     ]
+    },
+    "subject": {
+     "reference": "Patient/P05"
+    },
+    "effectiveDateTime": "2026-11-05"
+   }
+  },
+  {
+   "fullUrl": "Observation/O04",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "O04",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2160-0",
+       "display": "Creatinine [Mass/volume] in Serum or Plasma"
+      }
+     ]
+    },
+    "subject": {
+     "reference": "Patient/P10"
+    },
+    "effectiveDateTime": "2026-11-04",
+    "valueQuantity": {
+     "value": 1.6,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  },
+  {
+   "fullUrl": "Observation/O05",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "O05",
+    "status": "registered",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "3016-3",
+       "display": "Thyrotropin [Units/volume] in Serum or Plasma"
+      }
+     ]
+    },
+    "subject": {
+     "reference": "Patient/P12"
+    },
+    "effectiveDateTime": "2026-11-05"
+   }
+  },
+  {
+   "fullUrl": "Observation/O06",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "O06",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "3016-3",
+       "display": "Thyrotropin [Units/volume] in Serum or Plasma"
+      }
+     ]
+    },
+    "subject": {
+     "reference": "Patient/P09"
+    },
+    "effectiveDateTime": "2026-11-02",
+    "valueQuantity": {
+     "value": 3.1,
+     "unit": "mIU/L",
+     "system": "http://unitsofmeasure.org",
+     "code": "m[IU]/L"
+    }
+   }
+  },
+  {
+   "fullUrl": "Observation/O07",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "O07",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "718-7",
+       "display": "Hemoglobin [Mass/volume] in Blood"
+      }
+     ]
+    },
+    "subject": {
+     "reference": "Patient/P15"
+    },
+    "effectiveDateTime": "2026-11-04",
+    "valueQuantity": {
+     "value": 10.8,
+     "unit": "g/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "g/dL"
+    }
+   }
+  },
+  {
+   "fullUrl": "MedicationRequest/M01",
+   "resource": {
+    "resourceType": "MedicationRequest",
+    "id": "M01",
+    "status": "active",
+    "intent": "order",
+    "medicationCodeableConcept": {
+     "text": "Amlodipine 5 mg tablet, once daily"
+    },
+    "subject": {
+     "reference": "Patient/P04"
+    },
+    "authoredOn": "2026-08-10"
+   }
+  },
+  {
+   "fullUrl": "MedicationRequest/M02",
+   "resource": {
+    "resourceType": "MedicationRequest",
+    "id": "M02",
+    "status": "active",
+    "intent": "order",
+    "medicationCodeableConcept": {
+     "text": "Metformin 500 mg tablet, twice daily"
+    },
+    "subject": {
+     "reference": "Patient/P07"
+    },
+    "authoredOn": "2026-07-22"
+   }
+  },
+  {
+   "fullUrl": "MedicationRequest/M03",
+   "resource": {
+    "resourceType": "MedicationRequest",
+    "id": "M03",
+    "status": "active",
+    "intent": "order",
+    "medicationCodeableConcept": {
+     "text": "Levothyroxine 50 microgram tablet, once daily"
+    },
+    "subject": {
+     "reference": "Patient/P09"
+    },
+    "authoredOn": "2026-06-15"
+   }
+  },
+  {
+   "fullUrl": "MedicationRequest/M04",
+   "resource": {
+    "resourceType": "MedicationRequest",
+    "id": "M04",
+    "status": "active",
+    "intent": "order",
+    "medicationCodeableConcept": {
+     "text": "Atorvastatin 10 mg tablet, once daily"
+    },
+    "subject": {
+     "reference": "Patient/P11"
+    },
+    "authoredOn": "2026-09-01"
+   }
+  },
+  {
+   "fullUrl": "MedicationRequest/M05",
+   "resource": {
+    "resourceType": "MedicationRequest",
+    "id": "M05",
+    "status": "active",
+    "intent": "order",
+    "medicationCodeableConcept": {
+     "text": "Telmisartan 40 mg tablet, once daily"
+    },
+    "subject": {
+     "reference": "Patient/P01"
+    },
+    "authoredOn": "2026-08-28"
+   }
+  },
+  {
+   "fullUrl": "MedicationRequest/M06",
+   "resource": {
+    "resourceType": "MedicationRequest",
+    "id": "M06",
+    "status": "active",
+    "intent": "order",
+    "medicationCodeableConcept": {
+     "text": "Ferrous sulfate 200 mg tablet, once daily"
+    },
+    "subject": {
+     "reference": "Patient/P15"
+    },
+    "authoredOn": "2026-10-02"
+   }
+  }
+ ]
+}

@@ -1,0 +1,12 @@
+# Capstone project: patient-message inbox agent.
+# Versions match the course's tested environment (module3/requirements.txt) plus the SQLite checkpointer.
+langchain==1.2.10
+langchain-core==1.2.15
+langgraph==1.0.9
+langgraph-checkpoint==4.0.0
+langgraph-checkpoint-sqlite==3.0.3   # SqliteSaver: saves paused graphs in the clinic database
+# Install the provider package for the model route you use:
+langchain-google-genai==4.2.1        # hosted Gemini API
+langchain-ollama==1.0.1              # local model served by Ollama
+pytest
+python-dotenv==1.2.4

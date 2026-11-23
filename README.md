@@ -8,6 +8,8 @@ CivicPulse AI turns a photo of a broken streetlight, a pothole or an overflowing
 
 ![The CivicPulse AI dashboard](docs/screenshots/08-dashboard.png)
 
+For the healthcare capstone, open the [Clinicdesk patient inbox and setup guide](patient-message-inbox-agent/README.md).
+
 ---
 
 ## Contents

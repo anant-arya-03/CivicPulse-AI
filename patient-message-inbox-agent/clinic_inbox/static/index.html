@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#113c3b" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Patient inbox · Clinicdesk</title>
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <header class="bar">
+      <div class="barinner">
+        <div class="brand">
+          <span class="mark" aria-hidden="true">✚</span>Clinicdesk
+        </div>
+        <span class="barsep"></span
+        ><span class="workspace">Staff workspace</span
+        ><span class="demo">Synthetic demo</span>
+      </div>
+    </header>
+    <main>
+      <div class="pagehead">
+        <div>
+          <p class="crumb">Workspace <span>/</span> Inbox</p>
+          <h1>Patient inbox</h1>
+        </div>
+        <button id="refresh" class="outline">
+          <span aria-hidden="true">⟳</span> Refresh
+        </button>
+      </div>
+      <div id="notice" role="status" aria-live="polite"></div>
+      <section class="stats" aria-label="Inbox filters">
+        <button class="stat mint" data-filter="awaiting_review">
+          <span class="stat-icon stack" aria-hidden="true">▤</span
+          ><span>Awaiting review<strong id="pendingCount">–</strong></span>
+        </button>
+        <button class="stat pink" data-filter="urgent">
+          <span class="stat-icon" aria-hidden="true">!</span
+          ><span>Urgent reviews<strong id="urgentCount">–</strong></span>
+        </button>
+        <button class="stat amber" data-filter="error">
+          <span class="stat-icon" aria-hidden="true">⚑</span
+          ><span>Needs attention<strong id="errorCount">–</strong></span>
+        </button>
+      </section>
+      <div class="desk">
+        <section class="queue" aria-labelledby="queueTitle">
+          <div class="queuehead">
+            <div class="flex">
+              <h2 id="queueTitle">Message queue</h2>
+              <span class="number" id="queueCount">0</span>
+            </div>
+            <label class="search"
+              ><span class="lens" aria-hidden="true"></span
+              ><input
+                id="search"
+                type="search"
+                placeholder="Search name, ID or message"
+                aria-label="Search messages"
+            /></label>
+            <label class="filter"
+              >Show
+              <select id="filter">
+                <option value="all">All messages</option>
+                <option value="awaiting_review">Awaiting review</option>
+                <option value="urgent">Urgent reviews</option>
+                <option value="new">Unprocessed</option>
+                <option value="error">Needs attention</option>
+                <option value="done">Reviewed</option>
+              </select></label
+            >
+          </div>
+          <div
+            id="messages"
+            class="messages"
+            aria-label="Matching messages"
+          ></div>
+        </section>
+        <section class="detail" id="detail" aria-label="Selected message">
+          <div class="empty">Loading inbox…</div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
